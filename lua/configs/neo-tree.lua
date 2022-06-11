@@ -39,7 +39,7 @@ if status_ok then
       filtered_items = {
         visible = false,
         hide_dotfiles = true,
-        hide_gitignored = false,
+        hide_gitignored = true,
         hide_by_name = {
           ".DS_Store",
           "thumbs.db",

@@ -167,6 +167,9 @@ end
 -- Telescope
 if is_available "telescope.nvim" then
   map("n", "<leader>fw", function()
+    require("telescope.builtin").grep_string()
+  end, { desc = "Search word under cursor" })
+  map("n", "<leader>fg", function()
     require("telescope.builtin").live_grep()
   end, { desc = "Search words" })
   map("n", "<leader>gt", function()
@@ -179,7 +182,7 @@ if is_available "telescope.nvim" then
     require("telescope.builtin").git_commits()
   end, { desc = "Git commits" })
   map("n", "<leader>ff", function()
-    require("telescope.builtin").find_files()
+    require("telescope.builtin").find_files({ sorter = require('telescope.sorters').get_fuzzy_file() })
   end, { desc = "Search files" })
   map("n", "<leader>fb", function()
     require("telescope.builtin").buffers()
@@ -268,3 +271,10 @@ map("t", "<C-h>", "<c-\\><c-n><c-w>h", { desc = "Terminal left window navigation
 map("t", "<C-j>", "<c-\\><c-n><c-w>j", { desc = "Terminal down window navigation" })
 map("t", "<C-k>", "<c-\\><c-n><c-w>k", { desc = "Terminal up window navigation" })
 map("t", "<C-l>", "<c-\\><c-n><c-w>l", { desc = "Terminal right window naviation" })
+
+map("n", "s", function()
+  require('hop').hint_words()
+end)
+map("v", "s", function()
+  require('hop').hint_words()
+end)

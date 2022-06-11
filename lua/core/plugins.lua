@@ -309,6 +309,14 @@ local astro_plugins = {
       require "configs.session_manager"
     end,
   },
+
+  -- Hop between words
+  ["phaazon/hop.nvim"] = {
+    branch = "v1",
+    config = function()
+      require "configs.hop"
+    end,
+  },
 }
 
 if astronvim.updater.snapshot then
