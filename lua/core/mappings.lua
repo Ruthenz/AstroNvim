@@ -278,3 +278,9 @@ end)
 map("v", "s", function()
   require('hop').hint_words()
 end)
+
+map("n", "<C-u>", "<C-u>zz", { desc = "When scrolling keep cursor in middle of screen" })
+map("n", "<C-d>", "<C-d>zz", { desc = "When scrolling keep cursor in middle of screen" })
+
+map("n", "n", "nzz", { desc = "When searching keep cursor in middle of screen" })
+map("n", "N", "Nzz", { desc = "When searching keep cursor in middle of screen" })
