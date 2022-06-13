@@ -166,6 +166,12 @@ end
 
 -- Telescope
 if is_available "telescope.nvim" then
+  map("n", "gr", function()
+    require("telescope.builtin").lsp_references()
+  end, { desc = "References of current symbol" })
+  map("n", "gd", function()
+    require("telescope.builtin").lsp_definitions()
+  end, { desc = "Go to definition" })
   map("n", "<leader>fw", function()
     require("telescope.builtin").grep_string()
   end, { desc = "Search word under cursor" })
