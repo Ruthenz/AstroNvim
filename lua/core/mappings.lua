@@ -136,16 +136,16 @@ if is_available "smart-splits.nvim" then
   end, { desc = "Move to right split" })
 
   -- Resize with arrows
-  map("n", "<C-Up>", function()
+  map("n", "<A-k>", function()
     require("smart-splits").resize_up()
   end, { desc = "Resize split up" })
-  map("n", "<C-Down>", function()
+  map("n", "<A-j>", function()
     require("smart-splits").resize_down()
   end, { desc = "Resize split down" })
-  map("n", "<C-Left>", function()
+  map("n", "<A-h>", function()
     require("smart-splits").resize_left()
   end, { desc = "Resize split left" })
-  map("n", "<C-Right>", function()
+  map("n", "<A-l>", function()
     require("smart-splits").resize_right()
   end, { desc = "Resize split right" })
 else
