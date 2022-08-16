@@ -309,6 +309,9 @@ local astro_plugins = {
       require "configs.hop"
     end,
   },
+
+  -- Fireplace for clojure
+  ["tpope/vim-fireplace"] = {},
 }
 
 if astronvim.updater.snapshot then
