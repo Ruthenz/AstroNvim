@@ -186,24 +186,20 @@ maps.v["<"] = { "<gv", desc = "unindent line" }
 maps.v[">"] = { ">gv", desc = "indent line" }
 
 -- Improved Terminal Mappings
-map("t", "<esc>", "<C-\\><C-n>", { desc = "Terminal normal mode" })
-map("t", "jk", "<C-\\><C-n>", { desc = "Terminal normal mode" })
-map("t", "<C-h>", "<c-\\><c-n><c-w>h", { desc = "Terminal left window navigation" })
-map("t", "<C-j>", "<c-\\><c-n><c-w>j", { desc = "Terminal down window navigation" })
-map("t", "<C-k>", "<c-\\><c-n><c-w>k", { desc = "Terminal up window navigation" })
-map("t", "<C-l>", "<c-\\><c-n><c-w>l", { desc = "Terminal right window naviation" })
+maps.t["<esc>"] = { "<C-\\><C-n>", desc = "Terminal normal mode" }
+maps.t["jk"] = { "<C-\\><C-n>", desc = "Terminal normal mode" }
+maps.t["<C-h>"] = { "<c-\\><c-n><c-w>h", desc = "Terminal left window navigation" }
+maps.t["<C-j>"] = { "<c-\\><c-n><c-w>j", desc = "Terminal down window navigation" }
+maps.t["<C-k>"] = { "<c-\\><c-n><c-w>k", desc = "Terminal up window navigation" }
+maps.t["<C-l>"] = { "<c-\\><c-n><c-w>l", desc = "Terminal right window naviation" }
 
-map("n", "s", function()
-  require('hop').hint_words()
-end)
-map("v", "s", function()
-  require('hop').hint_words()
-end)
+maps.n["s"] = { function() require('hop').hint_words() end }
+maps.v["s"] = { function() require('hop').hint_words() end }
 
-map("n", "<C-u>", "<C-u>zz", { desc = "When scrolling keep cursor in middle of screen" })
-map("n", "<C-d>", "<C-d>zz", { desc = "When scrolling keep cursor in middle of screen" })
+maps.n["<C-u>"] = { "<C-u>zz", desc = "When scrolling up keep cursor in middle of screen" }
+maps.n["<C-d>"] = { "<C-d>zz", desc = "When scrolling down keep cursor in middle of screen" }
 
-map("n", "n", "nzz", { desc = "When searching keep cursor in middle of screen" })
-map("n", "N", "Nzz", { desc = "When searching keep cursor in middle of screen" })
+maps.n["n"] = { "nzz", desc = "When searching up keep cursor in middle of screen" }
+maps.n["N"] = { "Nzz", desc = "When searching down keep cursor in middle of screen" }
 
 astronvim.set_mappings(astronvim.user_plugin_opts("mappings", maps))
